@@ -21,15 +21,84 @@ It automatically classifies lead messages into business-relevant categories usin
 
 ## 🧱 Tech Stack
 
-| Layer | Tech |
-|-------|------|
-| Backend | Node.js, Express |
-| AI/NLP | Hugging Face Zero-Shot API |
-| Database | MongoDB Atlas + Mongoose |
-| Auth | Token-based header authentication |
-| Tools | Postman, CORS, dotenv, axios, nodemon |
+| Layer     | Tech                         |
+|-----------|------------------------------|
+| Backend   | Node.js, Express             |
+| AI/NLP    | Hugging Face Zero-Shot API  |
+| Database  | MongoDB Atlas + Mongoose     |
+| Auth      | Token-based header auth      |
+| Tools     | Postman, CORS, dotenv, axios |
 
 ---
 
 ## 📂 Folder Structure
+
+```
+ai-lead-manager/
+├── controllers/
+├── middleware/
+├── models/
+├── routes/
+├── services/
+├── .env
+├── app.js
+├── package.json
+```
+
+---
+
+## 🛠️ Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/your-username/ai-lead-manager.git
+cd ai-lead-manager
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Set up `.env`
+
+```env
+PORT=5000
+MONGODB_URI=your_mongodb_atlas_uri
+HUGGINGFACE_API_KEY=your_huggingface_api_key
+ADMIN_TOKEN=your_admin_token
+```
+
+> Generate your Hugging Face API key from https://huggingface.co/settings/tokens
+
+### 4. Start the dev server
+
+```bash
+npm run dev
+```
+
+---
+
+## 🧪 API Endpoints
+
+| Method  | Route                        | Description                        |
+|---------|-----------------------------|------------------------------------|
+| POST    | `/api/leads`                | Create and classify a lead         |
+| GET     | `/api/leads`                | Get all leads (admin only)         |
+| PATCH   | `/api/leads/:id/status`     | Update lead status (admin only)    |
+| DELETE  | `/api/leads/:id`            | Delete a lead (admin only)         |
+
+> Add `Authorization: your_admin_token` in request headers for protected routes.
+
+---
+
+## 📊 Upcoming Features
+
+- 🔢 Lead analytics (group by category/status/date)
+- 📬 Email notification on new lead
+- 🧩 Optional frontend dashboard (React)
+
+---
 
